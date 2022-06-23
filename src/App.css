@@ -1,42 +1,104 @@
-.App {
-  text-align: center;
-}
+/*
+  doing angular and scss in last job,
+  that's why it's like this.
+ */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+}
+
+.center {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.employee-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
-@keyframes App-logo-spin {
+.employee-list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2rem;
+  padding: 0 8px;
+}
+
+.employee-list-item:hover {
+  background-color: slategray;
+}
+
+.name-column {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.state-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.state-item {
+  display: flex;
+}
+
+.state-item div {
+  display: flex;
+  align-items: center;
+  padding: 0px 8px;
+  height: 100%;
+}
+
+.state-item:hover div {
+  cursor: pointer;
+  background-color: darkslategray;
+}
+
+.state-item-title {
+  white-space: nowrap;
+}
+
+.state-item-selected {
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+.state-item .icon {
+  width: 1rem;
+}
+
+.state-item:first-child .icon:not(.loading) {
+  visibility: hidden;
+}
+
+.state-item .icon span:not(.loading):before {
+  content: ">";
+}
+
+.state-item .icon span.loading:before {
+  content: ".";
+}
+
+.state-item .icon span.loading {
+  animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
   from {
-    transform: rotate(0deg);
+    transform: rotate(-90deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(270deg);
   }
-}
-
-button {
-  font-size: calc(10px + 2vmin);
 }
